@@ -1,3 +1,4 @@
+import 'package:animated_alert/alert.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -36,7 +37,14 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => const AnimatedAlert(
+                    success: true,
+                  ),
+                );
+              },
               icon: const Icon(
                 Icons.check_circle_outline_rounded,
                 size: 35,
@@ -52,7 +60,14 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => const AnimatedAlert(
+                    success: false,
+                  ),
+                );
+              },
               icon: const Icon(
                 Icons.cancel_outlined,
                 size: 35,
